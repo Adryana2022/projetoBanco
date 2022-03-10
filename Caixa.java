@@ -18,6 +18,7 @@ public class Caixa {
         int conta = 1 + numero.nextInt(9999);
     
         //Obtendo os dados iniciais do Cliente
+    //alterar system
         System.out.println("Cadastrando novo cliente.");
         System.out.print("entre com seu nome: ");
         nome = entrada.nextLine();
