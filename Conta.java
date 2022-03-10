@@ -14,6 +14,7 @@ public class Conta {
         this.conta=conta;
         saldo=saldo_inicial;
         saques=0;
+        
     }
     
     public void extrato(){
@@ -36,14 +37,11 @@ public class Conta {
         }
     }
       public void pix(double valor){
-        if(saldo >= valor){
+        
             saldo -= valor;
-            saques++;
             System.out.println("transferido: " + valor);
             System.out.println("Novo saldo: " + saldo + "\n");
-        } else {
-            System.out.println("Saldo insuficiente. Faça um depósito\n");
-        }
+        
     }
     
     public void depositar(double valor)
@@ -99,15 +97,14 @@ public class Conta {
                     break;
                     
             case 4: 
-                    if(saques<3){
+                    
                         System.out.print("Quanto deseja tranferir via pix: ");
                         valor = entrada.nextDouble();
-                        sacar(valor);
                         System.out.print("Qual a chave do pix: ");
                         String tipoChave = entrada.next();
-                    } else{
-                        System.out.println("Limite de saques diários atingidos.\n");
-                    }
+                        pix(valor);
+                        
+                   
                     break;
                     
             case 5: 
